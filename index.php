@@ -1,5 +1,5 @@
 <?php include('information.php'); ?>
-<?php include('db_conexion.php'); ?>
+
 
 
 <?php include('includes/header.php')?>
@@ -21,23 +21,10 @@
   <div class="div-test-javascript"  onclick="doSomething()"><?php echo implode("----", $materias[01019]); ?></div>
  
   <br>
-  <?php
-  $query = "INSERT INTO materias(id_materia, nom_materia,correlativas) VALUES (01015,'algebra', 'no')";
-  $result = mysqli_query($connexion_db, $query);
-  if(!$result) {
-    die("Query Failed.");
-  }
-  
-  
 
-  $query = "SELECT * FROM materias";
-  $result_materias = mysqli_query($connexion_db, $query);    
-  while($row = mysqli_fetch_assoc($result_materias)) { ?>
-          <tr>
-            <td><?php echo $row['id_materia']; ?></td>
-            <td><?php echo $row['nom_materia']; ?></td>
-            <td><?php echo $row['correlativas']; ?></td>
-            </tr>
-<?php } ?>
+  
+  <?php include('view/presentacion.php')?>
+
+<button onclick="redirgirToPresentacion()">presentacion</button>
 </body>
 </html>

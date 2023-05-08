@@ -4,3 +4,8 @@ let more = 1
 const doSomething =() =>{
   divTest.textContent='Tests javascript works'+more++
 }
+
+
+const redirgirToPresentacion =() =>{
+  location.href ='presentacion.php';
+}
