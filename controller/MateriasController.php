@@ -1,13 +1,16 @@
 <?php
+
+include("./model/MateriaModel.php");
+
 class MateriasController{
     public $materia;
 	
     public function __construct() {
-      $materia = new MateriaModel();
+      $this->materia = new Materia();
     }
 
     public function funcionTestRecursiva(){
-      $materia.funcionTest()
+      return $this->materia->funcionTestSelect();
     }
    
     public function verMateriaPorId(){

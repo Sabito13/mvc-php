@@ -1,17 +1,22 @@
-<?php include('information.php'); ?>
-<?php include('db_conexion.php'); ?>
-
-
-<?php include('includes/header.php')?>
 <?php  
-  $query = "SELECT * FROM materias";
-  $result_materias = mysqli_query($connexion_db, $query);    
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+
+
+include("./controller/MateriasController.php");
+
+$MateriasController = new MateriasController();
+
+$result_materias= $MateriasController->funcionTestRecursiva();
+
   while($row = mysqli_fetch_assoc($result_materias)) { ?>
           <tr>
             <td><?php echo $row['id_materia']; ?></td>
             <td><?php echo $row['nom_materia']; ?></td>
             <td><?php echo $row['correlativas']; ?></td>
-            </tr>
+            </tr><br>
 <?php } ?>
 </body>
 </html>
