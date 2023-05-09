@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'config/config.php';
+require_once './config/config.php';
 
 class Db {
 
@@ -8,7 +8,6 @@ class Db {
 	private $db;
 	private $user;
 	private $pass;
-	public $conexion_db;
 
 	public function __construct() {		
 
@@ -16,27 +15,23 @@ class Db {
 		$this->db = constant('DB');
 		$this->user = constant('DB_USER');
 		$this->pass = constant('DB_PASS');
-
-		session_start();
-
-			$this->conexion_db =new mysqli(
+	}
+	
+	public function getConexionDB() {
+			
+			$conexion_db =new mysqli(
 			$this->host,
 			$this->user,
 			$this->pass,
 			$this->db
 			);
-		   if($this->conexion_db->connect_errno) {
-			echo "Error de conexión con la base de datos: " . $this->conexion_db->connect_errno;	
+		   if($conexion_db->connect_errno) {
+			echo "Error de conexión con la base de datos: " . $conexion_db->connect_errno;	
 			exit;
+			 }
+			return $conexion_db;
 	}
-	
-		
-	}
-
 }
-
-
-
 /*session_start();
 
 $connexion_db = mysqli_connect(

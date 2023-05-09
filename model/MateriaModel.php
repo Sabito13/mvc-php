@@ -1,6 +1,6 @@
 <?php
 
-include('Db.php');
+require_once('Db.php');
 
 class Materia {
     private $id;
@@ -8,23 +8,20 @@ class Materia {
     private $correletivas;
     private $anio;
     private $cuatrimestre;
-
+    private $dbObj;
 
     public function __construct() {
-       
-    }
-
-    public function getConexionDB() {
-        $dbObj = new Db();
-        return $dbObj->conexion_db;
+        $this->dbObj = new Db();
     }
 
     
-    public function funcionTestInsert() {
-		$conexion_db = $this->getConexionDB();
+
+    
+    public function funcionTestInsert($nombre,$id) {
+		$conexion_db = $this->dbObj->getConexionDB();
 
 
-        $query = "INSERT INTO materias(id_materia, nom_materia,correlativas) VALUES (01015,'new', 'no')";
+        $query = "INSERT INTO materias(id_materia, nom_materia,correlativas) VALUES ('$id','$nombre', 'no')";
         $result =$conexion_db->query($query);
         if(!$result) {
             die("Query Failed.");
@@ -35,7 +32,7 @@ class Materia {
 
 
     public function funcionTestSelect() {
-        $conexion_db = $this->getConexionDB();
+        $conexion_db = $this->dbObj->getConexionDB();
 
         $query = "SELECT * FROM materias";
         $result_materias = $conexion_db->query($query); 

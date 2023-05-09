@@ -1,6 +1,5 @@
 <?php
-
-include("./model/MateriaModel.php");
+require_once 'model/MateriaModel.php';
 
 class MateriasController{
     public $materia;
@@ -13,8 +12,8 @@ class MateriasController{
       return $this->materia->funcionTestSelect();
     }
 
-    public function funcionTestInsert(){
-      return $this->materia->funcionTestInsert();
+    public function funcionTestInsert($nombre,$id){
+      return $this->materia->funcionTestInsert($nombre,$id);
     }
    
     public function verMateriaPorId(){

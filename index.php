@@ -1,8 +1,8 @@
-<?php include('information.php'); ?>
+<?php require_once('information.php'); ?>
 
 
 
-<?php include('includes/header.php')?>
+<?php include('includes/header.php');?>
   <div>hello world from div 1</div>
   <?php echo "hello from php"?>
   <div>hello world from div 2</div>
@@ -22,11 +22,18 @@
  
   <br>
 
-  
-  <?php include('view/presentacion.php')?>
-  <?php include('view/insercion.php')?>
+  <?php
+  require_once("controller/MateriasController.php");
+  $materiasController = new MateriasController();
+  require_once ('view/getMateria.php');
 
+      if(isset($_POST["nombre-materia"]) and isset( $_POST["id-materia"])){
+        $materiasController->funcionTestInsert( $_POST["nombre-materia"], $_POST["id-materia"]);
+        header('Location: index.php');
+      }
 
+ //require_once ('view/insertMateria.php') ?>
+  <input type="button" onclick="location='view/insertMateria.php'" />
   
 <button onclick="redirgirToPresentacion()">presentacion</button>
 </body>
