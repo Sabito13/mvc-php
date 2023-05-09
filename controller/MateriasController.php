@@ -12,6 +12,10 @@ class MateriasController{
     public function funcionTestRecursiva(){
       return $this->materia->funcionTestSelect();
     }
+
+    public function funcionTestInsert(){
+      return $this->materia->funcionTestInsert();
+    }
    
     public function verMateriaPorId(){
     }

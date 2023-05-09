@@ -24,7 +24,10 @@
 
   
   <?php include('view/presentacion.php')?>
+  <?php include('view/insercion.php')?>
 
+
+  
 <button onclick="redirgirToPresentacion()">presentacion</button>
 </body>
 </html>

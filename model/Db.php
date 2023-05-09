@@ -19,12 +19,17 @@ class Db {
 
 		session_start();
 
-			$this->conexion_db = mysqli_connect(
+			$this->conexion_db =new mysqli(
 			$this->host,
 			$this->user,
 			$this->pass,
 			$this->db
-		) or die(mysqli_error($this->conexion_db));
+			);
+		   if($this->conexion_db->connect_errno) {
+			echo "Error de conexión con la base de datos: " . $this->conexion_db->connect_errno;	
+			exit;
+	}
+	
 		
 	}
 

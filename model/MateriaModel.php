@@ -8,26 +8,41 @@ class Materia {
     private $correletivas;
     private $anio;
     private $cuatrimestre;
-    private $conexion_db;
 
 
     public function __construct() {
-        $dbObj = new Db();
-		$this->conexion_db = $dbObj->conexion_db;
+       
     }
+
+    public function getConexionDB() {
+        $dbObj = new Db();
+        return $dbObj->conexion_db;
+    }
+
     
     public function funcionTestInsert() {
+		$conexion_db = $this->getConexionDB();
+
+
         $query = "INSERT INTO materias(id_materia, nom_materia,correlativas) VALUES (01015,'new', 'no')";
-        $result = mysqli_query($this->conexion_db, $query);
+        $result =$conexion_db->query($query);
         if(!$result) {
             die("Query Failed.");
             }
+
+        $conexion_db->close();
     }
 
 
     public function funcionTestSelect() {
+        $conexion_db = $this->getConexionDB();
+
         $query = "SELECT * FROM materias";
-        $result_materias = mysqli_query($this->conexion_db, $query); 
+        $result_materias = $conexion_db->query($query); 
+
+        echo "se cierra o no";
+        echo $conexion_db->close();
+
         return $result_materias ;
     }
 
