@@ -1,11 +1,12 @@
 <?php  
-$result_materias= $materiasController->funcionTestRecursiva();
+
 
   while($row = mysqli_fetch_assoc($result_materias)) { ?>
           <tr>
-            <td><?php echo $row['id_materia']; ?></td>
-            <td><?php echo $row['nom_materia']; ?></td>
-            <td><?php echo $row['correlativas']; ?></td>
+          <td>id alumno<?php echo $row['legajo_alumno']; ?></td>
+          <td>nombe alumno<?php echo $row['nombre_alumno']; ?></td>
+            <td>id materia<?php echo $row['id_materia']; ?></td>
+            <td>nota<?php echo $row['nota_materia']; ?></td>
             </tr><br>
 <?php } ?>
 
