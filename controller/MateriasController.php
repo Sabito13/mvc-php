@@ -8,12 +8,27 @@ class MateriasController{
       $this->materia = new Materia();
     }
 
+    public function viewToInsertMateria(){
+
+      include("./view/insertMateria.php");
+
+    }
+
+
+
     public function funcionTestRecursiva(){
       return $this->materia->funcionTestSelect();
     }
 
     public function funcionTestInsert($nombre,$id){
       return $this->materia->funcionTestInsert($nombre,$id);
+    }
+
+    public function funcionTestView($listar){
+      if($listar){
+        include("./view/testview.php");
+      }
+      
     }
    
     public function verMateriaPorId(){
