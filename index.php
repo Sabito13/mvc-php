@@ -1,22 +1,12 @@
-<?php require_once('information.php'); ?>
-
 
 
 <?php require_once('includes/header.php');?>
-  <?php echo implode($arrayWithData)." \n"; ?>
-  <br>
-  <?php echo implode("----",$arrayWithData);?> 
-  <br>
-  <div class="div-test-css"><?php echo implode("----", $materias[01017]); ?></div>
-  <br>
-  <div class="div-test-javascript"  onclick="doSomething()"><?php echo implode("----", $materias[01019]); ?></div>
+ 
  
   <br>
 
   <?php
   require_once("controller/MateriaAlumnoController.php");
-  require_once("controller/ViewsController.php");
-  $viewsController = new ViewsController();
   $materiaAlumnoController = new MateriaAlumnoController();
   
   //$materiaAlumnoController->insertarDatosAlumno("pablo", 21);
@@ -26,7 +16,7 @@
   $mostrarAgregar  = true;
   $mostrarListar  = true;
   
-  $viewsController->viewAgregarMateriaAlumno($mostrarAgregar);
+  $materiaAlumnoController->viewAgregarMateriaAlumno($mostrarAgregar);
   $materiaAlumnoController->viewListarMateriaAlumno($mostrarListar);
   
  
@@ -37,7 +27,7 @@
       if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["crud-action"])){
         //echo implode("----",$_POST);
         if($_POST["crud-action"] == "Crear"){
-          $materiaAlumnoController->insertarMateriaAlumno($_POST["legajo-alumno"],$_POST["nombre-alumno"],$_POST["nombre-materia"], $_POST["nota-materia"]);
+          $materiaAlumnoController->agregarMateriaAlumno($_POST["legajo-alumno"],$_POST["nombre-alumno"],$_POST["id-materia"], $_POST["nota-materia"]);
           header('Location: index.php');
         } 
 

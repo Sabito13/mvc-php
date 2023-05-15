@@ -9,10 +9,11 @@ class MateriaAlumnoController{
     }
 
 
-    public function insertarMateriaAlumno($legajo_alumno,$nombre_alumno,$idMateria,$nota_materia){
-      if(isset($legajo_alumno) and isset($nombre_alumno) and isset($idMateria) and isset($nota_materia)){
-        $this->materiaAlumnoModel->insertarMateriaAlumno($legajo_alumno,$nombre_alumno,$idMateria,$nota_materia);
-      }
+    public function agregarMateriaAlumno($legajo_alumno,$nombre_alumno,$id_materia,$nota_materia){
+      //echo "dentro de controller fuera if";
+      //if(!empty($legajo_alumno) and !empty($nombre_alumno) and !empty($id_Materia) and !empty($nota_materia)){
+        $this->materiaAlumnoModel-> agregarMateriaAlumno($legajo_alumno,$nombre_alumno,$id_materia,$nota_materia);
+      //}
        
     }
 
@@ -25,10 +26,16 @@ class MateriaAlumnoController{
     public function viewListarMateriaAlumno($mostrar){
       $result_materias= $this->obtenerTodasMateriasAlumnos();
           if($mostrar){
-            include("./view/getMateria.php");
+            include("./view/MostrarMateriasAlumnoView.php");
           }
       }
-    
+      
+      public function viewAgregarMateriaAlumno($mostrar){
+        if($mostrar){
+          include("./view/AgregarMateriaAlumnoView.php");
+        }
+        
+      }
 
    
    

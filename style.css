@@ -5,3 +5,9 @@ body{
 .div-test-css{
   font-size: 40px;
 }
+
+.formulario{
+  height: 400px;
+  width: 400px;
+  background-color: aqua;
+}
