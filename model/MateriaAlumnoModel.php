@@ -30,12 +30,32 @@ class MateriaAlumnoModel {
         $query = "SELECT * FROM materia_alumno";
         $result_materias = $conexion_db->query($query); 
 
-        echo $conexion_db->close();
+        $conexion_db->close();
+
+        return $result_materias ;
+    }
+
+    public function obtenerTodasMateriasAlumnoPorLegajo($legajo_alumno){
+        $conexion_db = $this->dbObj->getConexionDB();
+
+        $query = "SELECT * FROM materia_alumno WHERE legajo_alumno = '$legajo_alumno' ";
+        $result_materias = $conexion_db->query($query); 
+
+        $conexion_db->close();
 
         return $result_materias ;
     }
 
 
+
+    public function eliminarMateriaAlumno($legajo_alumno,$id_materia){
+        $conexion_db = $this->dbObj->getConexionDB();
+
+        $query = "DELETE FROM materia_alumno WHERE legajo_alumno = '$legajo_alumno' AND id_materia='$id_materia'";
+        $result_materias = $conexion_db->query($query); 
+
+        $conexion_db->close();
+    }
 
     public function setLegajo_alumno($id_alumno) {
         $this->legajo_alumno = $id_alumno;
