@@ -3,23 +3,23 @@
  <div>
       <h1>Agregar una materia</h1>
       <br>
-      <form class="form" action=<?php echo constant('BASE_URL')."/index.php?controller=materia&action=insertarMateriaAlumno"?> method="POST">
+      <form class="form" action=<?php echo constant('BASE_URL')."/index.php"?> method="POST">
         Nombre Alumno
         <br>
         <input type="text" name="nombre-alumno"><br>
         legajo alumno
         <br>
-        <input type="number" name="legajo-alumno">
+        <input type="number" name="legajo-alumno" >
         <br>
   
-        id materia
+        Nombre materia
         <br>
-        <input type="number" name="nombre-materia"><br>
-        id Materia
+        <input type="text" name="nombre-materia" ><br>
+        nota Materia
         <br>
-        <input type="number" name="id-materia">
+        <input type="number" name="nota-materia" >
         <br>
-        <input type="submit" value="Insertar" onclick="location='../../index.php'" />
+        <input type="submit" value="Crear" name="crud-action" onclick="location='../../index.php'" />
       </form>
     </div>
     

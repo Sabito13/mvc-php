@@ -1,12 +1,13 @@
 <?php  
 
-
-  while($row = mysqli_fetch_assoc($result_materias)) { ?>
+  while($row = mysqli_fetch_assoc($result_materias)) { 
+    echo implode("----",$row);
+    ?>
           <tr>
-          <td>id alumno<?php echo $row['legajo_alumno']; ?></td>
-          <td>nombe alumno<?php echo $row['nombre_alumno']; ?></td>
+          <td>Legajo alumno<?php echo $row['legajo_alumno']; ?></td>
+          <td>nombre alumno<?php echo $row['nombre_alumno']; ?></td>
             <td>id materia<?php echo $row['id_materia']; ?></td>
-            <td>nota<?php echo $row['nota_materia']; ?></td>
+            <td>nota <?php echo $row['nota_materia']; ?></td>
             </tr><br>
 <?php } ?>
 

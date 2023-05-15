@@ -19,7 +19,7 @@
   $viewsController = new ViewsController();
   $materiaAlumnoController = new MateriaAlumnoController();
   
-  //$materiaAlumnoController->insertarDatosAlumno("pablo", 14);
+  //$materiaAlumnoController->insertarDatosAlumno("pablo", 21);
   //$materiaAlumnoController->insertarMateriaAlumno(14, 7);
 
 
@@ -28,30 +28,25 @@
   
   $viewsController->viewAgregarMateriaAlumno($mostrarAgregar);
   $materiaAlumnoController->viewListarMateriaAlumno($mostrarListar);
-
-     // if(isset($_POST["nombre-materia"]) and isset( $_POST["id-materia"])){
-     //   $materiasController->funcionTestInsert( $_POST["nombre-materia"], $_POST["id-materia"]);
-     //   header('Location: index.php');
-     // }
-
- //require_once ('view/insertMateria.php') ?>
+  
  
       
-      <br><br>
-      <?php    
-      if(isset($_POST["controller"]) and isset( $_POST["action"])){
-        echo "holi";
-        
-        $materiaAlumnoController->insertarDatosAlumno($_POST["nombre-alumno"], $_POST["legajo-alumno"]);
-        $materiaAlumnoController->{$_POST["action"]}($_POST["nombre-materia"], $_POST["id-materia"]);
-        echo "holi";
-        header('Location: index.php');
-      }
+     echo "<br><br>";
+   
+      
+      if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["crud-action"])){
+        //echo implode("----",$_POST);
+        if($_POST["crud-action"] == "Crear"){
+          $materiaAlumnoController->insertarMateriaAlumno($_POST["legajo-alumno"],$_POST["nombre-alumno"],$_POST["nombre-materia"], $_POST["nota-materia"]);
+          header('Location: index.php');
+        } 
 
+        if($_POST["crud-action"] == "Eliminar"){
+          echo "holi------------------------------------";
+        } 
+      } 
 
-
-
-
+     
     
 //if(isset($_GET["controller"]) and isset( $_GET["action"]) and $_GET["action"]=="listar" and isset( $_GET["listado"]) ){
 //    if($_GET["listado"]){

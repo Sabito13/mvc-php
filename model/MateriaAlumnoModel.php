@@ -10,11 +10,11 @@ class MateriaAlumnoModel {
         $this->dbObj = new Db();
     }
 
-    public function insertarMateriaAlumno($idMateria,$nota_materia) {
+    public function insertarMateriaAlumno($legajo_alumno,$nombre_alumno,$idMateria,$nota_materia) {
 		$conexion_db = $this->dbObj->getConexionDB();
 
 
-        $query = "INSERT INTO materia_alumno(legajo_alumno,nombre_alumno,id_materia,nota_materia) VALUES ('$this->legajo_alumno','$this->nombre_alumno','$idMateria', '$nota_materia')";
+        $query = "INSERT INTO materia_alumno(legajo_alumno,nombre_alumno,id_materia,nota_materia) VALUES ('$legajo_alumno','$nombre_alumno','$idMateria', '$nota_materia')";
         $result =$conexion_db->query($query);
         if(!$result) {
             die("Query Failed.");

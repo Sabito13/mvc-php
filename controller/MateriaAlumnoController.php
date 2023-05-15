@@ -8,13 +8,12 @@ class MateriaAlumnoController{
       $this->materiaAlumnoModel = new MateriaAlumnoModel();
     }
 
-    public function insertarDatosAlumno($nombre_alumno,$legajo_alumno){
-      $this->materiaAlumnoModel->setNombre_Alumno($nombre_alumno);
-      $this->materiaAlumnoModel->setLegajo_Alumno($legajo_alumno);
-    }
 
-    public function insertarMateriaAlumno($idMateria,$nota_materia){
-      return $this->materiaAlumnoModel->insertarMateriaAlumno($idMateria,$nota_materia);
+    public function insertarMateriaAlumno($legajo_alumno,$nombre_alumno,$idMateria,$nota_materia){
+      if(isset($legajo_alumno) and isset($nombre_alumno) and isset($idMateria) and isset($nota_materia)){
+        $this->materiaAlumnoModel->insertarMateriaAlumno($legajo_alumno,$nombre_alumno,$idMateria,$nota_materia);
+      }
+       
     }
 
 
