@@ -1,38 +1,32 @@
-<?php require_once('includes/header.php');?> 
-  <br>
-  <?php
+<?php require_once('includes/header.php');
+  echo "<br>";
+ 
   require_once("controller/MateriaAlumnoController.php");
   $materiaAlumnoController = new MateriaAlumnoController();
 
+  //Si existe Cookie con legajo alumno significa que la sesion esta iniciada
   if(isset($_COOKIE["legajo-alumno"])){
     $sesionIniciada  = true;
   }else{
     $sesionIniciada  = false;
   }
 
-  
-  $mostrarListar  = true;
 
-
+  //Solicitud para iniciar sesion
   if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["iniciar-sesion"])){
-    
-    //falta completar metodo
-    $materiaAlumnoController->iniciarSesionAlumno($_POST["legajo-alumno"],$_POST["nombre-alumno"]);
-    echo "hola";
-
-    $cookie_name ="legajo-alumno";
-    $cookie_value = $_POST["legajo-alumno"];
-    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-
-    $cookie_name = "nombre-alumno";
-    $cookie_value = $_POST["nombre-alumno"];
-    setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
-
+    $materiaAlumnoController->iniciarSesionAlumno($_POST["legajo-alumno"]);
     header('Location: index.php');
+  }
+
+  //Solicitud para registrar alumno
+  if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["registrar-alumno"])){
+    $materiaAlumnoController->RegistrarAlumno($_POST["legajo-alumno"],$_POST["nombre-alumno"]);
+   
   }
 
   if(!$sesionIniciada){
     $materiaAlumnoController->viewIniciarSesionAlumno(!$sesionIniciada);
+    $materiaAlumnoController->viewRegistrarAlumno(!$sesionIniciada);
   }else {
     $materiaAlumnoController->viewAgregarMateriaAlumno(true);
     $materiaAlumnoController->viewListarMateriaAlumno(true);

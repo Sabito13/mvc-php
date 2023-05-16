@@ -10,6 +10,20 @@ class MateriaAlumnoModel {
         $this->dbObj = new Db();
     }
 
+    public function alumnoExistePorLegajo($legajo_alumno){
+        $conexion_db = $this->dbObj->getConexionDB();
+
+        $query = "SELECT * FROM materia_alumno WHERE legajo_alumno = $legajo_alumno  LIMIT 0,1";
+        $result_materias = $conexion_db->query($query); 
+
+        $conexion_db->close();
+
+        return $result_materias ;
+    }
+
+
+
+
     public function  agregarMateriaAlumno($legajo_alumno,$nombre_alumno,$id_materia,$nota_materia) {
 		$conexion_db = $this->dbObj->getConexionDB();
 

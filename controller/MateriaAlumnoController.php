@@ -9,8 +9,34 @@ class MateriaAlumnoController{
     }
 
 
-    public function iniciarSesionAlumno($legajo_alumno,$nombre_alumno){
-      
+    public function iniciarSesionAlumno($legajo_alumno){
+    $alumnoExiste=  $this->materiaAlumnoModel->alumnoExistePorLegajo($legajo_alumno);    
+    $tupla = mysqli_fetch_assoc($alumnoExiste);
+
+    if(isset($tupla) and !empty($tupla)){
+      $cookie_name ="legajo-alumno";
+      $cookie_value = $legajo_alumno;
+      setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
+      $cookie_name = "nombre-alumno";
+      $cookie_value = $tupla["nombre_alumno"];
+      setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+      }else{
+        echo "Legajo incorrecto";
+      }
+    }
+
+
+    public function RegistrarAlumno($legajo_alumno,$nombre_alumno){
+      $alumnoExiste=  $this->materiaAlumnoModel->alumnoExistePorLegajo($legajo_alumno);    
+      $tupla = mysqli_fetch_assoc($alumnoExiste);
+
+      if(isset($tupla) and !empty($tupla)){
+        echo "Este legajo ya esta registrado";
+      }else{
+        $this->materiaAlumnoModel-> agregarMateriaAlumno($legajo_alumno,$nombre_alumno,0,0);
+        echo "Registro Exitoso";
+      }
     }
 
     public function agregarMateriaAlumno($legajo_alumno,$nombre_alumno,$id_materia,$nota_materia){
@@ -67,9 +93,13 @@ class MateriaAlumnoController{
         if($mostrar){
           include("./view/SesionAlumnoView.php");
         }
-        
       }
 
+      public function viewRegistrarAlumno($mostrar){
+        if($mostrar){
+          include("./view/RegistrarAlumnoView.php");
+        }
+      }
    
    
     public function verMateriaPorId(){
