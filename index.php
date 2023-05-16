@@ -20,9 +20,19 @@
 
   //Solicitud para registrar alumno
   if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["registrar-alumno"])){
-    $materiaAlumnoController->RegistrarAlumno($_POST["legajo-alumno"],$_POST["nombre-alumno"]);
-   
+    $materiaAlumnoController->registrarAlumno($_POST["legajo-alumno"],$_POST["nombre-alumno"]);
   }
+
+
+  //Solicitud para cerrar sesion
+  if ($_SERVER["REQUEST_METHOD"] == "GET" and isset($_GET["cerrarSesion"])){
+    $materiaAlumnoController->cerrarSesion();
+    header('Location: index.php');
+  }
+
+
+
+
 
   if(!$sesionIniciada){
     $materiaAlumnoController->viewIniciarSesionAlumno(!$sesionIniciada);

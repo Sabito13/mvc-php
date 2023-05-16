@@ -8,8 +8,31 @@
     <script src="./app.js" defer></script>
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="index.php">PHP MySQL CRUD</a>
+    <nav style="margin:0;
+    padding:0%;">
+
+      <div style="
+      display: flex;
+      flex-direction:row;
+      justify-content:space-evenly;
+      background-color:black;
+      height:80px;
+
+      color:white;
+      font-size:20px;
+      ">
+          <div>
+          <a  href="index.php">PHP MySQL CRUD</a>
+          </div>
+          
+          <div>
+          <a  href="index.php?cerrarSesion=true">cerrar sesion</a>
+          </div>
+          
+          <div>
+            test
+          </div>
+        
+        
       </div>
     </nav>
