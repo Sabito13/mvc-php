@@ -2,8 +2,6 @@
 require_once('Db.php');
 
 class MateriaAlumnoModel {
-    private $nombre_alumno;
-    private $legajo_alumno;
     private $dbObj;
 
     public function __construct() {
@@ -61,6 +59,18 @@ class MateriaAlumnoModel {
     }
 
 
+    public function obtenerTodasMateriasAlumnoPorNota($legajo_alumno,$nota_baja,$nota_alta){
+        $conexion_db = $this->dbObj->getConexionDB();
+
+        $query = "SELECT * FROM materia_alumno WHERE legajo_alumno = '$legajo_alumno' AND nota_materia >= '$nota_baja' AND nota_materia <= '$nota_alta' ";
+        $result_materias = $conexion_db->query($query); 
+
+        $conexion_db->close();
+
+        return $result_materias ;
+    }
+
+
 
     public function eliminarMateriaAlumno($legajo_alumno,$id_materia){
         $conexion_db = $this->dbObj->getConexionDB();
@@ -70,26 +80,5 @@ class MateriaAlumnoModel {
 
         $conexion_db->close();
     }
-
-    public function setLegajo_alumno($id_alumno) {
-        $this->legajo_alumno = $id_alumno;
-    }
-
-    public function setNombre_alumno($nombre_alumno) {
-        $this->$nombre_alumno = $nombre_alumno;
-    }
-
-    public function getLegajo_alumno() {
-        return $this->legajo_alumno;
-    }
-
-    public function getNombre_alumno() {
-        return $this->nombre_alumno;
-    }
-    
-    
-
-    
-
 }
 ?>

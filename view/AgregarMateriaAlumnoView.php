@@ -15,7 +15,9 @@
         <input type="number" name="nota-materia" id="nota-materia" >
         </div>
 
+        <div>
         <input type="submit" value="Agregar" name="crud-action" onclick="location='../../index.php'" />
+        </div>
         </div>
   </form>
    

@@ -5,7 +5,7 @@ body {
   color: whitesmoke;
 }
 
-
+/*------------------------------------------*/
 /*Estilo del header*/
 .menu-div {
   display: flex;
@@ -23,7 +23,7 @@ a{
   text-decoration: inherit;
 }
 
-
+/*------------------------------------------*/
 /*Layout de la pagina*/
 .layout-container{
   display: grid;
@@ -35,10 +35,9 @@ a{
 
 
 
-
+/*------------------------------------------*/
 /*Estilo de la view Agregar materias alumno*/
 .contanainer-agregar-materia{
-  margin-bottom:25px ;
   border:2px solid blue;
 }
 
@@ -51,13 +50,25 @@ a{
   flex-direction: column;
   justify-content: space-between;
   color: bisque;
-  padding: 20px 0;
+  text-align: center;
 }
 
+.agregar-materia-inputs div {
+  margin-bottom: 10px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.agregar-materia-inputs input{
+  width: 80px;
+  height: 20px;
+}
+
+/*------------------------------------------*/
 /*Estilo de la view Agregar materias alumno*/
 .contanainer-eliminar-materia{
-  margin-bottom:25px ;
   border:2px solid blue;
 }
 
@@ -70,11 +81,24 @@ a{
   flex-direction: column;
   justify-content: space-around;
   color: bisque;
-  padding: 20px 0;
+  text-align: center;
   
 }
 
+.eliminar-materia-inputs div {
+  margin-bottom: 10px;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eliminar-materia-inputs input{
+  width: 80px;
+  height: 20px;
+}
+
+/*------------------------------------------*/
 /*Estilo de la view mostrar materias alumno*/
 
 .contanainer-mostrar-materia{

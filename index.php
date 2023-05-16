@@ -14,15 +14,12 @@ if (!isset($_COOKIE["legajo-alumno"])) {
   <div class="layout-container">
     <div class="layout-left-menu"> <?php 
     $materiaAlumnoController->viewAgregarMateriaAlumno(true);
-    
+    $materiaAlumnoController->viewEliminarMateriaAlumno(true)
     ?></div>
-    <div class="layout-main-content"><?php $materiaAlumnoController->viewListarMateriaAlumno(true);?></div>
-    <div class="layout-right-menu"><?php $materiaAlumnoController->viewEliminarMateriaAlumno(true); ?> </div>
+    <div class="layout-main-content"><?php $materiaAlumnoController->viewMostrarMateriaAlumno();?></div>
+    <div class="layout-right-menu"><?php $materiaAlumnoController->viewFiltrosPromediosMateriaAlumno(true); ?> </div>
   </div>
   
-  
-  
-
 <?php }
 
 
@@ -47,18 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" and isset($_GET["cerrarSesion"])) {
 
 
 //Todas las solicitudes para crud son manejadas dentro de este if
-if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["crud-action"])) {
-  
-
-  if ($_POST["crud-action"] == "Agregar") {
-    $materiaAlumnoController->agregarMateriaAlumno($_COOKIE["legajo-alumno"], $_COOKIE["nombre-alumno"], $_POST["id-materia"], $_POST["nota-materia"]);
-    header('Location: index.php');
-  }
-
-  if ($_POST["crud-action"] == "Eliminar") {
-    $materiaAlumnoController->eliminarMateriaAlumno($_COOKIE["legajo-alumno"], $_POST["id-materia"]);
-    header('Location: index.php');
-  }
+if (isset($_POST["crud-action"]) or isset($_GET["crud-action"])) {
+  $materiaAlumnoController->crudFuncionMateriaAlumno();
 }
 
 //<input type="button" onclick="location='view/insertMateria.php'" />
