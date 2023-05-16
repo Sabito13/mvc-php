@@ -1,13 +1,92 @@
-body{
-  background-color: brown;
+body {
+  background-color: rgb(31, 29, 29);
+  margin: 0;
+  padding: 0%;
+  color: whitesmoke;
 }
 
-.div-test-css{
-  font-size: 40px;
+
+/*Estilo del header*/
+.menu-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: black;
+  height: 60px;
+  color: white;
+  font-size: 20px;
 }
 
-.formulario{
-  height: 400px;
-  width: 400px;
-  background-color: aqua;
+a{
+  color: red;
+  text-decoration: inherit;
+}
+
+
+/*Layout de la pagina*/
+.layout-container{
+  display: grid;
+  grid-template-columns: minmax(250px,250px) minmax(400px,700px) minmax(200px,200px) ;
+  grid-template-rows:auto;
+  column-gap: 5px;
+}
+
+
+
+
+
+/*Estilo de la view Agregar materias alumno*/
+.contanainer-agregar-materia{
+  margin-bottom:25px ;
+  border:2px solid blue;
+}
+
+.contanainer-agregar-materia h2{
+  text-align: center;
+}
+
+.agregar-materia-inputs{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: bisque;
+  padding: 20px 0;
+}
+
+
+/*Estilo de la view Agregar materias alumno*/
+.contanainer-eliminar-materia{
+  margin-bottom:25px ;
+  border:2px solid blue;
+}
+
+.contanainer-eliminar-materia h2{
+  text-align: center;
+}
+
+.eliminar-materia-inputs{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: bisque;
+  padding: 20px 0;
+  
+}
+
+
+/*Estilo de la view mostrar materias alumno*/
+
+.contanainer-mostrar-materia{
+  display: grid;
+  grid-template-columns:  minmax(150px,300px) minmax(150px,300px);
+  grid-template-rows:auto;
+  color: bisque;
+}
+
+.contanainer-mostrar-materia > *{
+  text-align: center;
+  border: 2px solid blue;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

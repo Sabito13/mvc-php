@@ -1,13 +1,18 @@
 <?php require_once './config/config.php';?> 
 
- <div>
-      <h1>Eliminar una materia</h1>
-      <br>
-      <form class="form" action=<?php echo constant('BASE_URL')."/index.php"?> method="POST">
+ <div class="contanainer-eliminar-materia">
+  <h2>Eliminar Materia</h2> 
+    <form class="form" action=<?php echo constant('BASE_URL')."/index.php"?> method="POST">
+      <div class="eliminar-materia-inputs"> 
+        <div>
+          <label for="id-materia">ID materia</label>
+          <input type="number" name="id-materia" id="id-materia">
+        </div>
 
-        Id materia
-        <input type="number" name="id-materia">
-        <br>
+        <div>
         <input type="submit" value="Eliminar" name="crud-action"/>
-      </form>
-    </div>
+        </div>
+      
+      </div>    
+    </form>
+  </div>

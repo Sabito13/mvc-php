@@ -8,31 +8,25 @@
     <script src="./app.js" defer></script>
   </head>
   <body>
-    <nav style="margin:0;
-    padding:0%;">
-
-      <div style="
-      display: flex;
-      flex-direction:row;
-      justify-content:space-evenly;
-      background-color:black;
-      height:80px;
-
-      color:white;
-      font-size:20px;
-      ">
-          <div>
-          <a  href="index.php">PHP MySQL CRUD</a>
-          </div>
+    <nav>
+      <div class="menu-div">
+          <div><a href="index.php" >Materias MVC CRUD</a></div>
           
+          <?php 
+              if(isset($_COOKIE["nombre-alumno"])  ) {?>
           <div>
-          <a  href="index.php?cerrarSesion=true">cerrar sesion</a>
+           <?php 
+              echo $_COOKIE["nombre-alumno"];
+            ?>
           </div>
-          
+              
           <div>
-            test
+          <?php echo $_COOKIE["legajo-alumno"] ?>
           </div>
-        
-        
-      </div>
+
+          <?php echo "<div><a href='index.php?cerrarSesion=true'
+          >cerrar sesion </a></div>" ;
+          }?>
+      
+        </div>
     </nav>

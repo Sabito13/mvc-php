@@ -1,19 +1,10 @@
-<div 
-  style="display: grid;
-        grid-template-columns: minmax(180px,300px) minmax(180px,300px)  minmax(180px,300px) minmax(180px,300px);
-        grid-template-rows: auto;
-        color: bisque;
-        gap: 20px;">
+<div class="contanainer-mostrar-materia">
 
-  <div>Legajo alumno</div>
-  <div>Nombre alumno </div>
   <div>Id materia</div>
   <div>Nota materia</div>
 
   <?php  while($row = mysqli_fetch_assoc($result_materias)) { 
     //echo implode("----",$row);?>  
-            <div><?php echo $row['legajo_alumno']; ?></div>
-            <div><?php echo $row['nombre_alumno'];?> </div>
             <div><?php echo $row['id_materia']; ?></div>
             <div><?php echo $row['nota_materia']; ?></div>
   <?php } ?>

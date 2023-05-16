@@ -1,26 +1,24 @@
 <?php require_once './config/config.php';?> 
 
-<br>
+<div class="contanainer-agregar-materia">
+<h2>Agregar Materia</h2>
   <form class="form" action=<?php echo constant('BASE_URL')."/index.php"?> method="POST">
-    <div style="display: grid;
-              grid-template-columns: repeat(3,minmax(180px,300px));
-              grid-template-rows: auto;
-              color: bisque;
-              gap: 20px;
-              border:2px solid blue;">
-        <div>
-          ID materia
-          <br>
-          <input type="number" name="id-materia" ><br>
+    <div class="agregar-materia-inputs">
+        
+        <div >
+        <label for="id-materia">ID materia</label>
+        <input  type="number" name="id-materia"  id="id-materia">
         </div>
 
         <div>  
-          Nota Materia
-          <br>
-          <input type="number" name="nota-materia" >
+        <label for="nota-materia">Nota Materia</label>
+        <input type="number" name="nota-materia" id="nota-materia" >
         </div>
-        <input type="submit" value="Crear" name="crud-action" onclick="location='../../index.php'" />
-      </form>
+
+        <input type="submit" value="Agregar" name="crud-action" onclick="location='../../index.php'" />
+        </div>
+  </form>
+   
     </div>
     
   
