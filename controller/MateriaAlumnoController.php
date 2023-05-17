@@ -60,18 +60,22 @@ class MateriaAlumnoController
 
   //Esta funcion se encarga de todas las operaciones crud
   public function crudFuncionMateriaAlumno(){
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+      if ($_POST["crud-action"] == "Agregar") {
+        $this->agregarMateriaAlumno($_SESSION["legajo-alumno"], $_SESSION["nombre-alumno"], $_POST["id-materia"], $_POST["nota-materia"]);
+      }
+  
+      if ($_POST["crud-action"] == "Eliminar") {
+        $this->eliminarMateriaAlumno($_SESSION["legajo-alumno"], $_POST["id-materia"]);
+      }
 
-    if ($_POST["crud-action"] == "Agregar") {
-      $this->agregarMateriaAlumno($_SESSION["legajo-alumno"], $_SESSION["nombre-alumno"], $_POST["id-materia"], $_POST["nota-materia"]);
     }
-
-    if ($_POST["crud-action"] == "Eliminar") {
-      $this->eliminarMateriaAlumno($_SESSION["legajo-alumno"], $_POST["id-materia"]);
-    }
-
-    if ($_GET["crud-action"] == "Filtrar") {
-      $filtro_nota= $_GET["nota-menor"].",".$_GET["nota-mayor"];
-      setcookie("filtro-materia", $filtro_nota, time() + 60, "/");
+   
+    if ($_SERVER["REQUEST_METHOD"] == "GET"){
+      if ($_GET["crud-action"] == "Filtrar") {
+        $filtro_nota= $_GET["nota-menor"].",".$_GET["nota-mayor"];
+        $_SESSION["filtro-materia"]=$filtro_nota;
+      }
     }
   }
 

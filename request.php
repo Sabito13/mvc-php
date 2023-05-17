@@ -1,4 +1,6 @@
-<?php require_once('includes/header.php');
+<?php session_start(); 
+require_once("controller/MateriaAlumnoController.php");
+$materiaAlumnoController = new MateriaAlumnoController();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["iniciar-sesion"])) {
   $materiaAlumnoController->iniciarSesionAlumno($_POST["legajo-alumno"]);
