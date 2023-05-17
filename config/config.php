@@ -5,6 +5,11 @@ define("DB", 'php_materias_crud');
 define("DB_USER", "root");
 define("DB_PASS", "");
 
+
+
+
+
+
 define('BASE_DIR', __DIR__);
 
 /** Ruta en el navegador */

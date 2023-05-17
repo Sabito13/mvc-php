@@ -1,0 +1,7 @@
+CREATE TABLE materia_alumno (
+    legajo_alumno int,
+    nombre_alumno varchar(255),
+    id_materia int,
+    nota_materia int,
+   CONSTRAINT PK_Person PRIMARY KEY (legajo_alumno, id_materia)
+);

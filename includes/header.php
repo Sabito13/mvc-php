@@ -1,3 +1,7 @@
+<?php session_start(); 
+require_once("controller/MateriaAlumnoController.php");
+$materiaAlumnoController = new MateriaAlumnoController();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,18 +17,18 @@
           <div><a href="index.php" >Materias MVC CRUD</a></div>
           
           <?php 
-              if(isset($_COOKIE["nombre-alumno"])  ) {?>
+              if(isset($_SESSION["nombre-alumno"])  ) {?>
           <div>
            <?php 
-              echo $_COOKIE["nombre-alumno"];
+              echo $_SESSION["nombre-alumno"];
             ?>
           </div>
               
           <div>
-          <?php echo $_COOKIE["legajo-alumno"] ?>
+          <?php echo $_SESSION["legajo-alumno"] ?>
           </div>
 
-          <?php echo "<div><a href='index.php?cerrarSesion=true'
+          <?php echo "<div><a href='request.php?cerrarSesion=true'
           >cerrar sesion </a></div>" ;
           }?>
       

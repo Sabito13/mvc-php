@@ -2,7 +2,7 @@
 
 <div class="contanainer-agregar-materia">
 <h2>Agregar Materia</h2>
-  <form class="form" action=<?php echo constant('BASE_URL')."/index.php"?> method="POST">
+  <form class="form" action=<?php echo constant('BASE_URL')."/request.php"?> method="POST">
     <div class="agregar-materia-inputs">
         
         <div >

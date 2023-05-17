@@ -2,7 +2,7 @@
 
 <br>
 
-  <form class="form" action=<?php echo constant('BASE_URL')."/index.php"?> method="POST">
+  <form class="form" action=<?php echo constant('BASE_URL')."/request.php"?> method="POST">
     <div style="text-align:center;
               border:2px solid blue;">
         <h1>Registrar Alumno</h1>

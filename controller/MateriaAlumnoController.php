@@ -19,22 +19,26 @@ class MateriaAlumnoController
     $minutos = 5 * 60;
 
     if (isset($tupla) and !empty($tupla)) {
-      $cookie_name = "legajo-alumno";
-      $cookie_value = $legajo_alumno;
-      setcookie($cookie_name, $cookie_value, time() + $minutos, "/");
+      //$cookie_name = "legajo-alumno";
+      //$cookie_value = $legajo_alumno;
+      //setcookie($cookie_name, $cookie_value, time() + $minutos, "/");
+      
+      //$cookie_name = "nombre-alumno";
+      //$cookie_value = $tupla["nombre_alumno"];
+      //setcookie($cookie_name, $cookie_value, time() + $minutos, "/");
 
-      $cookie_name = "nombre-alumno";
-      $cookie_value = $tupla["nombre_alumno"];
-      setcookie($cookie_name, $cookie_value, time() + $minutos, "/");
+      $_SESSION["legajo-alumno"] =  $legajo_alumno;
+      $_SESSION["nombre-alumno"] =  $tupla["nombre_alumno"];
+      
     } 
   }
 
   //Funcion para poder cerrar sesion en la aplicacion
   //La funcion borra el tiempo de la cookies 
-  public function cerrarSesion()
-  {
-    setcookie("legajo-alumno", "", time() + 1, "/");
-    setcookie("nombre-alumno", "", time() + 1, "/");
+  public function cerrarSesion(){
+    //setcookie("legajo-alumno", "", time() + 1, "/");
+    //setcookie("nombre-alumno", "", time() + 1, "/");
+    session_destroy();
   }
 
   //Funcion para poder registrar un alumno en la aplicacion
@@ -58,19 +62,17 @@ class MateriaAlumnoController
   public function crudFuncionMateriaAlumno(){
 
     if ($_POST["crud-action"] == "Agregar") {
-      $this->agregarMateriaAlumno($_COOKIE["legajo-alumno"], $_COOKIE["nombre-alumno"], $_POST["id-materia"], $_POST["nota-materia"]);
+      $this->agregarMateriaAlumno($_SESSION["legajo-alumno"], $_SESSION["nombre-alumno"], $_POST["id-materia"], $_POST["nota-materia"]);
     }
 
     if ($_POST["crud-action"] == "Eliminar") {
-      $this->eliminarMateriaAlumno($_COOKIE["legajo-alumno"], $_POST["id-materia"]);
+      $this->eliminarMateriaAlumno($_SESSION["legajo-alumno"], $_POST["id-materia"]);
     }
 
     if ($_GET["crud-action"] == "Filtrar") {
       $filtro_nota= $_GET["nota-menor"].",".$_GET["nota-mayor"];
       setcookie("filtro-materia", $filtro_nota, time() + 60, "/");
     }
-
-    header('Location: index.php');
   }
 
 
@@ -114,11 +116,11 @@ class MateriaAlumnoController
   //si no hay ningun filtro aplicado va a devolver todas las materias del 
   //alumno. Si hay un filtro lo aplica.
   public function viewMostrarMateriaAlumno(){
-    if(isset($_COOKIE["filtro-materia"])){
-      $filtro_nota = explode(",", $_COOKIE["filtro-materia"]);
-      $result_materias = $this->materiaAlumnoModel->obtenerTodasMateriasAlumnoPorNota( $_COOKIE["legajo-alumno"],$filtro_nota[0],$filtro_nota[1]);
+    if(isset($_SESSION["filtro-materia"])){
+      $filtro_nota = explode(",", $_SESSION["filtro-materia"]);
+      $result_materias = $this->materiaAlumnoModel->obtenerTodasMateriasAlumnoPorNota( $_SESSION["legajo-alumno"],$filtro_nota[0],$filtro_nota[1]);
     }else{
-      $result_materias =$this->materiaAlumnoModel->obtenerTodasMateriasAlumnoPorLegajo($_COOKIE["legajo-alumno"]);
+      $result_materias =$this->materiaAlumnoModel->obtenerTodasMateriasAlumnoPorLegajo($_SESSION["legajo-alumno"]);
     }
 
       include("./view/MostrarMateriasAlumnoView.php");

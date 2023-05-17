@@ -9,6 +9,7 @@ class Db {
 	private $user;
 	private $pass;
 
+
 	public function __construct() {		
 
 		$this->host = constant('DB_HOST');
