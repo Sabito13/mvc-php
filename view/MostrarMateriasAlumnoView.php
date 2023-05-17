@@ -18,5 +18,3 @@
 //isset($_GET["nombre"]) ? print $_GET["nombre"] : ""; 
 //isset($_GET["email"]) ? print $_GET["email"] : ""; 
   -->
-</body>
-</html>

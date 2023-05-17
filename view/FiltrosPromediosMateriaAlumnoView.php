@@ -2,7 +2,7 @@
 
  <div class="contanainer-filtro-materia">
   <h2>Filtros</h2> 
-    <form class="form" action=<?php echo constant('BASE_URL')."/index.php"?> method="GET">
+    <form class="form" action=<?php echo constant('BASE_URL')."/request.php"?> method="GET">
       <div class="filtro-materia-inputs"> 
         <h3>Materia por nota</h3>
         <div>
@@ -20,5 +20,12 @@
         </div>
       
       </div>    
+    </form>
+
+    <form class="form" action=<?php echo constant('BASE_URL')."/request.php"?> method="GET">
+    <h3>Promedio del alumno</h3>
+        <div>
+        <input type="submit" value="Promedio" name="crud-action"/>
+        </div>
     </form>
   </div>

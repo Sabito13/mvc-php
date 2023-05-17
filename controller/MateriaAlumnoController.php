@@ -76,6 +76,10 @@ class MateriaAlumnoController
         $filtro_nota= $_GET["nota-menor"].",".$_GET["nota-mayor"];
         $_SESSION["filtro-materia"]=$filtro_nota;
       }
+
+      if ($_GET["crud-action"] == "Promedio") {
+        $_SESSION["promedio"]="Promedio";
+      }
     }
   }
 
@@ -120,14 +124,25 @@ class MateriaAlumnoController
   //si no hay ningun filtro aplicado va a devolver todas las materias del 
   //alumno. Si hay un filtro lo aplica.
   public function viewMostrarMateriaAlumno(){
+
     if(isset($_SESSION["filtro-materia"])){
+    
       $filtro_nota = explode(",", $_SESSION["filtro-materia"]);
       $result_materias = $this->materiaAlumnoModel->obtenerTodasMateriasAlumnoPorNota( $_SESSION["legajo-alumno"],$filtro_nota[0],$filtro_nota[1]);
+      include("./view/MostrarMateriasAlumnoView.php");
+    
+    }else if(isset($_SESSION["promedio"])){
+      
+      $result_materias =$this->materiaAlumnoModel->obtenerTodasMateriasAlumnoPorLegajo($_SESSION["legajo-alumno"]);
+      include("./view/InformacionYPromediosView.php");
+    
     }else{
       $result_materias =$this->materiaAlumnoModel->obtenerTodasMateriasAlumnoPorLegajo($_SESSION["legajo-alumno"]);
-    }
-
       include("./view/MostrarMateriasAlumnoView.php");
+    }
+      
+
+      
   }
 
   //Devuelve la view de agregar materias alumno
