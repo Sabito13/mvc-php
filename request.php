@@ -18,9 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" and isset($_GET["cerrarSesion"])) {
 }
 
 
-//Todas las solicitudes para crud son manejadas dentro de este if
-if (isset($_POST["crud-action"]) or isset($_GET["crud-action"])) {
-  $materiaAlumnoController->crudFuncionMateriaAlumno();
+//Todas las solicitudes para crud POST son manejadas dentro de este if
+if (isset($_POST["crud-action"])) {
+  $materiaAlumnoController->crudFuncionMateriaAlumnoPost();
+}
+
+//Todas las solicitudes para crud Get son manejadas dentro de este if
+if (isset($_GET["crud-action"])) {
+  $materiaAlumnoController->crudFuncionMateriaAlumnoGet();
 }
 
 header('Location: index.php');

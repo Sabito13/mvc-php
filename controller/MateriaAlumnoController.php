@@ -59,19 +59,22 @@ class MateriaAlumnoController
   }
 
   //Esta funcion se encarga de todas las operaciones crud
-  public function crudFuncionMateriaAlumno(){
-    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+  public function crudFuncionMateriaAlumnoPost(){
       if ($_POST["crud-action"] == "Agregar") {
         $this->agregarMateriaAlumno($_SESSION["legajo-alumno"], $_SESSION["nombre-alumno"], $_POST["id-materia"], $_POST["nota-materia"]);
       }
   
       if ($_POST["crud-action"] == "Eliminar") {
         $this->eliminarMateriaAlumno($_SESSION["legajo-alumno"], $_POST["id-materia"]);
-      }
+      }  
 
-    }
-   
-    if ($_SERVER["REQUEST_METHOD"] == "GET"){
+  }
+
+
+
+  //Esta funcion se encarga de todas las operaciones crud
+  public function crudFuncionMateriaAlumnoGet(){
+
       if ($_GET["crud-action"] == "Filtrar") {
         $filtro_nota= $_GET["nota-menor"].",".$_GET["nota-mayor"];
         $_SESSION["filtro-materia"]=$filtro_nota;
@@ -80,7 +83,13 @@ class MateriaAlumnoController
       if ($_GET["crud-action"] == "Promedio") {
         $_SESSION["promedio"]="Promedio";
       }
-    }
+
+      if ($_GET["crud-action"] == "mostrartodo") {
+        $_SESSION["promedio"]="";
+        $_SESSION["filtro-materia"]="";
+      }
+      
+    
   }
 
 
@@ -125,13 +134,13 @@ class MateriaAlumnoController
   //alumno. Si hay un filtro lo aplica.
   public function viewMostrarMateriaAlumno(){
 
-    if(isset($_SESSION["filtro-materia"])){
+    if(isset($_SESSION["filtro-materia"]) and !empty($_SESSION["filtro-materia"])){
     
       $filtro_nota = explode(",", $_SESSION["filtro-materia"]);
       $result_materias = $this->materiaAlumnoModel->obtenerTodasMateriasAlumnoPorNota( $_SESSION["legajo-alumno"],$filtro_nota[0],$filtro_nota[1]);
       include("./view/MostrarMateriasAlumnoView.php");
     
-    }else if(isset($_SESSION["promedio"])){
+    }else if(isset($_SESSION["promedio"]) and !empty($_SESSION["promedio"]) ){
       
       $result_materias =$this->materiaAlumnoModel->obtenerTodasMateriasAlumnoPorLegajo($_SESSION["legajo-alumno"]);
       include("./view/InformacionYPromediosView.php");

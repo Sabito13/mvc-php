@@ -2,6 +2,7 @@ body {
   background-color: rgb(31, 29, 29);
   margin: 0;
   padding: 0%;
+  height:100%;
   color: whitesmoke;
 }
 
@@ -113,4 +114,12 @@ a{
   border: 2px solid blue;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+
+/*------------------------------------------*/
+/*Estilo del footer*/
+.footer-container{
+  position:absolute;
+  bottom:0;
 }
