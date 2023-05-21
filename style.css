@@ -31,6 +31,7 @@ a{
   grid-template-columns: minmax(250px,250px) minmax(400px,700px) minmax(200px,200px) ;
   grid-template-rows:auto;
   column-gap: 5px;
+  height: 70%;
 }
 
 
@@ -118,8 +119,9 @@ a{
 
 
 /*------------------------------------------*/
-/*Estilo del footer*/
+/*Estilo del footer
 .footer-container{
   position:absolute;
   bottom:0;
-}
+  width: 100%;
+}*/

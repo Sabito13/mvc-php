@@ -1,12 +1,15 @@
 <?php
 require_once 'model/MateriaAlumnoModel.php';
+require_once 'MateriaCarreraController.php';
 
 class MateriaAlumnoController
 {
-  public $materiaAlumnoModel;
+  private $materiaAlumnoModel;
+  private $materiaCarreraController;
 
   public function __construct(){
     $this->materiaAlumnoModel = new MateriaAlumnoModel();
+    $this->materiaCarreraController = new MateriaCarreraController();
   }
 
 
@@ -61,7 +64,11 @@ class MateriaAlumnoController
   //Esta funcion se encarga de todas las operaciones crud
   public function crudFuncionMateriaAlumnoPost(){
       if ($_POST["crud-action"] == "Agregar") {
-        $this->agregarMateriaAlumno($_SESSION["legajo-alumno"], $_SESSION["nombre-alumno"], $_POST["id-materia"], $_POST["nota-materia"]);
+
+        $existe_materia_con_id =$this->materiaCarreraController->materiaExistePorSuId($_POST["id-materia"]);
+        if($existe_materia_con_id){
+          $this->agregarMateriaAlumno($_SESSION["legajo-alumno"], $_SESSION["nombre-alumno"], $_POST["id-materia"], $_POST["nota-materia"]);
+        }
       }
   
       if ($_POST["crud-action"] == "Eliminar") {

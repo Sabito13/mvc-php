@@ -1,0 +1,9 @@
+INSERT INTO materia_carrera VALUES (07071,'Tecnologia Aplicada','-'),
+(01017,'Algebra y Geometría Analítica','-'),
+(07030,'Algoritmo y Estructura de Datos','-'),
+(07032,'Teoría de Sistemas','-'),
+(02004,'Problemática Regional','-'),
+(07031,'Arquitectura de Computadores I','7071,-'),
+(07033,'Programación con Objetos I','7030,-'),
+(02001,'Análisis del Discurso','-'),
+(01018,'Matemática Discreta','-');
