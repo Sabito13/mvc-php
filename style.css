@@ -105,7 +105,7 @@ a{
 
 .contanainer-mostrar-materia{
   display: grid;
-  grid-template-columns:  minmax(150px,300px) minmax(150px,300px);
+  grid-template-columns: minmax(150px,200px) minmax(150px,300px) minmax(150px,300px);
   grid-template-rows:auto;
   color: bisque;
 }

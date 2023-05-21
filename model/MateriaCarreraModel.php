@@ -22,7 +22,7 @@ class MateriaCarreraModel {
         $conexion_db->close();
     }
 
-    public function  materiaExistePorSuId($id_materia) {
+    public function  obtenerMateriaPorId($id_materia) {
       $conexion_db = $this->dbObj->getConexionDB();
 
       $query = "SELECT * FROM materia_carrera WHERE id_materia = '$id_materia'  LIMIT 0,1";
@@ -34,5 +34,6 @@ class MateriaCarreraModel {
       }
 
   }
+
 
 ?>

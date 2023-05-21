@@ -1,11 +1,15 @@
 <div class="contanainer-mostrar-materia">
 
   <div>Id materia</div>
+  <div>Nombre materia</div>
   <div>Nota materia</div>
 
   <?php  while($row = mysqli_fetch_assoc($result_materias)) { 
+    $materia_carrera= $this->materiaCarreraController->obtenerMateriaPorId($row['id_materia']);
+    $tupla_materia_carrera = mysqli_fetch_assoc($materia_carrera);
     //echo implode("----",$row);?>  
             <div><?php echo $row['id_materia']; ?></div>
+            <div><?php echo $tupla_materia_carrera['nombre_materia']; ?></div>
             <div><?php echo $row['nota_materia']; ?></div>
   <?php } ?>
 </div>

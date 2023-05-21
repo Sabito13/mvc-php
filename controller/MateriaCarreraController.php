@@ -13,11 +13,14 @@ class MateriaCarreraController{
   }
 
   public function  materiaExistePorSuId($id_materia) {
-    $materia_existe = $this->materiaCarreraModel->materiaExistePorSuId($id_materia);
+    $materia_existe = $this->materiaCarreraModel->obtenerMateriaPorId($id_materia);
     $tupla = mysqli_fetch_assoc($materia_existe);
     return (isset($tupla) and !empty($tupla)); 
   }
-  
+  public function  obtenerMateriaPorId($id_materia){
+    $materia = $this->materiaCarreraModel->obtenerMateriaPorId($id_materia);
+    return $materia;
+  }
 }
 
 ?>
