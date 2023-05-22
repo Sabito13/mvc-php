@@ -1,6 +1,8 @@
 <?php session_start(); 
 require_once("controller/MateriaAlumnoController.php");
+require_once("controller/MateriaCarreraController.php");
 $materiaAlumnoController = new MateriaAlumnoController();
+$materiaCarreraController = new MateriaCarreraController();
 ?>
 <!DOCTYPE html>
 <html lang="en">

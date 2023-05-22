@@ -163,6 +163,7 @@ class MateriaAlumnoController
 
   //Devuelve la view de agregar materias alumno
   public function viewAgregarMateriaAlumno(){
+    $materias_resultado = $this->materiaCarreraController->obtenerTodasMaterias();
       include("./view/AgregarMateriaAlumnoView.php");
   }
 

@@ -28,10 +28,10 @@ a{
 /*Layout de la pagina*/
 .layout-container{
   display: grid;
-  grid-template-columns: minmax(250px,250px) minmax(400px,700px) minmax(200px,200px) ;
+  grid-template-columns: minmax(250px,250px) minmax(500px,700px) minmax(200px,300px) ;
   grid-template-rows:auto;
   column-gap: 5px;
-  height: 70%;
+  min-height: 80vh;
 }
 
 

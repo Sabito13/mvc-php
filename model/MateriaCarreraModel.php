@@ -33,6 +33,17 @@ class MateriaCarreraModel {
       return $result_materias ;
       }
 
+      public function obtenerTodasMaterias(){
+        $conexion_db = $this->dbObj->getConexionDB();
+
+        $query = "SELECT * FROM materia_carrera";
+        $result_materias = $conexion_db->query($query); 
+
+        $conexion_db->close();
+
+        return $result_materias ;
+      }
+
   }
 
 

@@ -17,8 +17,6 @@ if (!isset($_SESSION["legajo-alumno"])) {
   
 <?php }
 
-
-
 //Solicitud para iniciar sesion
 
 //<input type="button" onclick="location='view/insertMateria.php'" />

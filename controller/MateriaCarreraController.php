@@ -21,6 +21,12 @@ class MateriaCarreraController{
     $materia = $this->materiaCarreraModel->obtenerMateriaPorId($id_materia);
     return $materia;
   }
+
+
+
+  public function  obtenerTodasMaterias(){
+    return $this->materiaCarreraModel->obtenerTodasMaterias();
+  }
 }
 
 ?>
