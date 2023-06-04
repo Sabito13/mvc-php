@@ -54,10 +54,8 @@ class MateriaAlumnoController
     $tupla = mysqli_fetch_assoc($alumnoExiste);
 
     if (isset($tupla) and !empty($tupla)) {
-      echo "Este legajo ya esta registrado";
     } else {
       $this->materiaAlumnoModel->agregarMateriaAlumno($legajo_alumno, $nombre_alumno, 0, 0);
-      echo "Registro Exitoso";
     }
   }
 

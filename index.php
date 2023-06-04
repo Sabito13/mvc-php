@@ -2,8 +2,14 @@
 
 //renderizados de views
 if (!isset($_SESSION["legajo-alumno"])) {
+?>
+<div class="layout-login-container">
+  <?php
   $materiaAlumnoController->viewIniciarSesionAlumno(true);
   $materiaAlumnoController->viewRegistrarAlumno(true);
+  ?>
+</div>  
+<?php
 } else {
   ?>
   <div class="layout-container">

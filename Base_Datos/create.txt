@@ -5,3 +5,11 @@ CREATE TABLE materia_alumno (
     nota_materia int,
    CONSTRAINT PK_Person PRIMARY KEY (legajo_alumno, id_materia)
 );
+
+
+CREATE TABLE materia_carrera (
+    id_materia int,
+    nombre_materia varchar(255),
+   correlativas varchar(255),
+   CONSTRAINT id_materia PRIMARY KEY (id_materia)
+);
