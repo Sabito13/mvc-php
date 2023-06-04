@@ -13,51 +13,7 @@ class MateriaAlumnoController
   }
 
 
-  //Funcion para poder iniciar sesion en la aplicacion
-  //La funcion recibe un legajo y verifica si existe en la BD
-  //Si el legajo existe setea los datos en Cookies
-  public function iniciarSesionAlumno($legajo_alumno){
-    $alumnoExiste =  $this->materiaAlumnoModel->alumnoExistePorLegajo($legajo_alumno);
-    $tupla = mysqli_fetch_assoc($alumnoExiste);
-    $minutos = 5 * 60;
-
-    if (isset($tupla) and !empty($tupla)) {
-      //$cookie_name = "legajo-alumno";
-      //$cookie_value = $legajo_alumno;
-      //setcookie($cookie_name, $cookie_value, time() + $minutos, "/");
-      
-      //$cookie_name = "nombre-alumno";
-      //$cookie_value = $tupla["nombre_alumno"];
-      //setcookie($cookie_name, $cookie_value, time() + $minutos, "/");
-
-      $_SESSION["legajo-alumno"] =  $legajo_alumno;
-      $_SESSION["nombre-alumno"] =  $tupla["nombre_alumno"];
-      
-    } 
-  }
-
-  //Funcion para poder cerrar sesion en la aplicacion
-  //La funcion borra el tiempo de la cookies 
-  public function cerrarSesion(){
-    //setcookie("legajo-alumno", "", time() + 1, "/");
-    //setcookie("nombre-alumno", "", time() + 1, "/");
-    session_destroy();
-  }
-
-  //Funcion para poder registrar un alumno en la aplicacion
-  //La funcion recibe un legajo y nombre de alumno
-  //verifica que no exista ya una tupla con ese legajo
-  //si no exite inserta una tupla con datos en 0
-  //si ya existe una tupla con ese legajo no hace nada
-  public function registrarAlumno($legajo_alumno, $nombre_alumno){
-    $alumnoExiste =  $this->materiaAlumnoModel->alumnoExistePorLegajo($legajo_alumno);
-    $tupla = mysqli_fetch_assoc($alumnoExiste);
-
-    if (isset($tupla) and !empty($tupla)) {
-    } else {
-      $this->materiaAlumnoModel->agregarMateriaAlumno($legajo_alumno, $nombre_alumno, 0, 0);
-    }
-  }
+  
 
   //Esta funcion se encarga de todas las operaciones crud
   public function crudFuncionMateriaAlumnoPost(){
@@ -65,7 +21,7 @@ class MateriaAlumnoController
 
         $existe_materia_con_id =$this->materiaCarreraController->materiaExistePorSuId($_POST["id-materia"]);
         if($existe_materia_con_id){
-          $this->agregarMateriaAlumno($_SESSION["legajo-alumno"], $_SESSION["nombre-alumno"], $_POST["id-materia"], $_POST["nota-materia"]);
+          $this->agregarMateriaAlumno($_SESSION["legajo-alumno"], $_POST["id-materia"], $_POST["nota-materia"]);
         }
       }
   
@@ -101,8 +57,8 @@ class MateriaAlumnoController
 
   //Funcion para poder agregar una materia junto con su nota a la bd
   //La funcion recibe un legajo y nombre de alumno,id materia y nota de materia
-  public function agregarMateriaAlumno($legajo_alumno, $nombre_alumno, $id_materia, $nota_materia){
-    $this->materiaAlumnoModel->agregarMateriaAlumno($legajo_alumno, $nombre_alumno, $id_materia, $nota_materia);
+  public function agregarMateriaAlumno($legajo_alumno, $id_materia, $nota_materia){
+    $this->materiaAlumnoModel->agregarMateriaAlumno($legajo_alumno, $id_materia, $nota_materia);
 
   }
 
@@ -161,7 +117,7 @@ class MateriaAlumnoController
 
   //Devuelve la view de agregar materias alumno
   public function viewAgregarMateriaAlumno(){
-    $materias_resultado = $this->materiaCarreraController->obtenerTodasMaterias();
+    $materias_resultado = $this->materiaCarreraController->obtenerTodasLasNoMateriasAlumno( $_SESSION["legajo-alumno"]);
       include("./view/AgregarMateriaAlumnoView.php");
   }
 

@@ -17,6 +17,13 @@
           <input type="text" name="nombre-alumno"><br>
         </div>
 
+
+        <div>
+          Id carrera
+          <br>
+          <input type="number" name="id-carrera"><br>
+        </div>
+
         <input type="submit" value="Registrar" name="registrar-alumno" onclick="location='../../index.php'" />
       </div>
       </form>

@@ -1,20 +1,23 @@
 <?php session_start(); 
 require_once("controller/MateriaAlumnoController.php");
+require_once("controller/AlumnoController.php");
+
 $materiaAlumnoController = new MateriaAlumnoController();
+$alumnoController = new AlumnoController();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["iniciar-sesion"])) {
-  $materiaAlumnoController->iniciarSesionAlumno($_POST["legajo-alumno"]);
+  $alumnoController->iniciarSesionAlumno($_POST["legajo-alumno"]);
 }
 
 //Solicitud para registrar alumno
 if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["registrar-alumno"])) {
-  $materiaAlumnoController->registrarAlumno($_POST["legajo-alumno"], $_POST["nombre-alumno"]);
+  $alumnoController->registrarAlumno($_POST["legajo-alumno"], $_POST["nombre-alumno"],$_POST["id-carrera"]);
 }
 
 
 //Solicitud para cerrar sesion
 if ($_SERVER["REQUEST_METHOD"] == "GET" and isset($_GET["cerrarSesion"])) {
-  $materiaAlumnoController->cerrarSesion();
+  $alumnoController->cerrarSesion();
 }
 
 
