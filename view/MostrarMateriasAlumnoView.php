@@ -1,8 +1,8 @@
 <div class="contanainer-mostrar-materia">
 
-  <div>Id materia</div>
-  <div>Nombre materia</div>
-  <div>Nota materia</div>
+  <div>Id Materia</div>
+  <div>Nombre Materia</div>
+  <div>Nota Materia</div>
 
   <?php  while($row = mysqli_fetch_assoc($result_materias)) { 
     $materia_carrera= $this->materiaCarreraController->obtenerMateriaPorId($row['id_materia']);

@@ -7,12 +7,12 @@
         <h3>Materia por nota</h3>
         <div>
           <label for="nota-menor">Nota Menor</label>
-          <input type="number" name="nota-menor" id="nota-menor">
+          <input type="number" name="nota-menor" min="1" max="10" id="nota-menor">
         </div>
 
         <div>
           <label for="nota-mayor">Nota Mayor</label>
-          <input type="number" name="nota-mayor" id="nota-mayor">
+          <input type="number" name="nota-mayor" min="1" max="10" id="nota-mayor">
         </div>
 
         <div>

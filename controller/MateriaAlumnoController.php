@@ -123,6 +123,7 @@ class MateriaAlumnoController
 
 //Devuelve la view de elimina materias alumno
   public function viewEliminarMateriaAlumno($mostrar){
+    $materias_resultado = $this->materiaCarreraController->obtenerTodasLasSiMateriasAlumno( $_SESSION["legajo-alumno"]);
       include("./view/EliminarMateriaAlumnoView.php");
   }
 

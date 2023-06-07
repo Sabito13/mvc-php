@@ -21,11 +21,11 @@
         
         <div>  
         <label for="nota-materia">Nota Materia</label>
-        <input type="number" name="nota-materia" id="nota-materia" >
+        <input type="number" name="nota-materia" id="nota-materia" min="1" max="10">
         </div>
 
         <div>
-        <input type="submit" value="Agregar" name="crud-action" onclick="location='../../index.php'" />
+        <input type="submit" value="Agregar" name="crud-action"/>
         </div>
         </div>
   </form>

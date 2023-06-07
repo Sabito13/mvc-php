@@ -31,6 +31,11 @@ class MateriaCarreraController{
   public function obtenerTodasLasNoMateriasAlumno($legajo_alumno){
     return $this->materiaCarreraModel->obtenerTodasLasNoMateriasAlumno($legajo_alumno);
   }
+
+
+  public function obtenerTodasLasSiMateriasAlumno($legajo_alumno){
+    return $this->materiaCarreraModel->obtenerTodasLasSiMateriasAlumno($legajo_alumno);
+  }
 }
 
 ?>

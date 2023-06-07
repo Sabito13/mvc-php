@@ -13,7 +13,7 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  background-color: black;
+  background-color: #269fac;
   height: 60px;
   color: white;
   font-size: 20px;
@@ -36,19 +36,18 @@ a{
 /*------------------------------------------*/
 /*Estilo del menu izquierdo */
 .layout-left-menu{
-  background-color:#4d4444;
+  background-color:#bd7373;
 }
 
 
 /*------------------------------------------*/
-/*Estilo del main content */
+/*Estilo del menu derecho */
 .layout-right-menu{
-  background-color:#4d4444;
+  background-color:#bd7373;
   text-align:center;
   padding:30px;
 }
-/*------------------------------------------*/
-/*Estilo del menu derecho */
+
 
 
 /*------------------------------------------*/
@@ -119,15 +118,15 @@ a{
   display: grid;
   grid-template-columns: minmax(150px,200px) minmax(150px,300px) minmax(150px,300px);
   grid-template-rows:auto;
-  
+  margin-bottom:40px
 }
 
 .contanainer-mostrar-materia > *{
   text-align: center;
   border-bottom: 1px solid blue;
   font-size:20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 /*------------------------------------------*/
 /*Estilo de la view login y registro*/

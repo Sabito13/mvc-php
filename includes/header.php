@@ -29,11 +29,12 @@ $alumnoController = new AlumnoController();
           </div>
               
           <div>
+            Legajo:
           <?php echo $_SESSION["legajo-alumno"] ?>
           </div>
 
           <?php echo "<div><a href='request.php?cerrarSesion=true'
-          >cerrar sesion </a></div>" ;
+          >Cerrar Sesion </a></div>" ;
           }?>
       
         </div>

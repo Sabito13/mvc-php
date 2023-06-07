@@ -57,6 +57,19 @@ class MateriaCarreraModel {
         return $result_materias ;
       }
 
+      public function obtenerTodasLasSiMateriasAlumno($legajo_alumno){
+        $conexion_db = $this->dbObj->getConexionDB();
+
+        $query = " SELECT * FROM materia_carrera mc 
+        WHERE mc.id_materia in(Select ma.id_materia From materia_alumno ma Where ma.legajo_alumno = '$legajo_alumno')  ";
+            
+       $result_materias = $conexion_db->query($query); 
+
+        $conexion_db->close();
+
+        return $result_materias ;
+      }
+
       
   }
 
