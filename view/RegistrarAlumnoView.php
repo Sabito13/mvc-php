@@ -6,22 +6,16 @@
     <div style="text-align:center;">
         <h1>Registrar Alumno</h1>
         <div>
-          Legajo alumno
-          <br>
-          <input type="number" name="legajo-alumno" >
+          <input type="number" name="legajo-alumno"  placeholder="Legajo Alumno">
         </div>
 
         <div>
-          Nombre alumno
-          <br>
-          <input type="text" name="nombre-alumno"><br>
+          <input type="text" name="nombre-alumno" placeholder="Nombre Alumno">
         </div>
 
 
         <div>
-          Id carrera
-          <br>
-          <input type="number" name="id-carrera"><br>
+          <input type="number" name="id-carrera" placeholder="Id Carrera">
         </div>
 
         <input type="submit" value="Registrar" name="registrar-alumno" onclick="location='../../index.php'" />

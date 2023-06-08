@@ -3,12 +3,10 @@
 <div class="sesion-layout">
 
   <form class="form" action=<?php echo constant('BASE_URL')."/request.php"?> method="POST">
-    <div style="text-align:center;">
+    <div>
         <h1>Iniciar sesion Alumno</h1>
         <div>
-          Legajo alumno
-          <br>
-          <input type="number" name="legajo-alumno" >
+          <input type="number" name="legajo-alumno"  placeholder="Legajo Alumno">
         </div>
     </div>
 

@@ -1,3 +1,7 @@
+DROP TABLE IF EXISTS materia_alumno;
+DROP TABLE IF EXISTS materia_carrera;
+DROP TABLE IF EXISTS alumno;
+
 CREATE TABLE materia_alumno (
     legajo_alumno int,
     id_materia int,
@@ -20,3 +24,5 @@ CREATE TABLE alumno (
     id_carrera int,
    CONSTRAINT PK_Person PRIMARY KEY (legajo_alumno,id_carrera )
 );
+
+

@@ -5,9 +5,8 @@
     <form class="form" action=<?php echo constant('BASE_URL')."/request.php"?> method="POST">
       <div class="eliminar-materia-inputs"> 
          <div >
-          <label for="id-materia">Elegir Materia</label>
           <select name="id-materia" id="id-materia">
-          <option value="">--Seleccionar--</option>
+          <option value="">Seleccionar Materia</option>
           <?php  while($row = mysqli_fetch_assoc($materias_resultado)) { ?>
           <option value=<?php echo $row['id_materia']; ?>><?php echo $row['nombre_materia']; ?></option>
           <?php } ?>

@@ -13,22 +13,28 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  background-color: #269fac;
+  background-color: #04AA6D;
   height: 60px;
   color: white;
-  font-size: 20px;
+  font-size: 25px;
+  font-family:sans-serif;
 }
 
 a{
-  color: red;
+  color:black;
   text-decoration: inherit;
 }
+
+a:hover{
+ color:red;
+}
+
 
 /*------------------------------------------*/
 /*Estilo Layout de la pagina*/
 .layout-container{
   display: grid;
-  grid-template-columns: minmax(250px,280px) minmax(500px,900px) minmax(200px,280px) ;
+  grid-template-columns: minmax(250px,300px) minmax(500px,1600px) ;
   grid-template-rows:auto;
   column-gap: 20px;
   min-height: 80vh;
@@ -36,28 +42,32 @@ a{
 /*------------------------------------------*/
 /*Estilo del menu izquierdo */
 .layout-left-menu{
-  background-color:#bd7373;
+  background-color:#022317;
+  font-size:22px;
 }
 
 
 /*------------------------------------------*/
 /*Estilo del menu derecho */
 .layout-right-menu{
-  background-color:#bd7373;
+  background-color:#022317;
   text-align:center;
-  padding:30px;
+  font-size:22px;
 }
 
 
 
 /*------------------------------------------*/
+//*------------------------------------------*/
 /*Estilo de la view Agregar materias alumno*/
 .contanainer-agregar-materia{
-  margin-bottom:20px;
+  padding-bottom:32px;
+  border-bottom:2px solid red;
 }
 
 .contanainer-agregar-materia h2{
   text-align: center;
+  margin:18px 0px;
 }
 
 .agregar-materia-inputs{
@@ -69,25 +79,38 @@ a{
 
 .agregar-materia-inputs div {
   margin-bottom: 10px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.agregar-materia-inputs input{
+.agregar-materia-inputs-nota input{
+  font-size:18px;
+  text-align:center;
   width: 80px;
-  height: 20px;
+  height: 30px;
+}
+
+.agregar-materia-inputs-select select{
+  font-size:18px;
+  width: 200px;
+  height: 30px;
+}
+.agregar-materia-inputs-submit input{
+  width: 80px;
+  height: 30px;
+  font-size:18px;
 }
 
 /*------------------------------------------*/
 /*Estilo de la view Eliminar materias alumno*/
 .contanainer-eliminar-materia{
- 
+  margin-bottom:12px;
 }
 
 .contanainer-eliminar-materia h2{
   text-align: center;
+  margin:18px 0px;
 }
 
 .eliminar-materia-inputs{
@@ -108,7 +131,14 @@ a{
 
 .eliminar-materia-inputs input{
   width: 80px;
-  height: 20px;
+  height: 30px;
+  font-size:18px;
+}
+
+.eliminar-materia-inputs select{
+  font-size:18px;
+  width: 200px;
+  height: 30px;
 }
 
 /*------------------------------------------*/
@@ -116,7 +146,7 @@ a{
 
 .contanainer-mostrar-materia{
   display: grid;
-  grid-template-columns: minmax(150px,200px) minmax(150px,300px) minmax(150px,300px);
+  grid-template-columns: minmax(150px,300px) minmax(150px,300px) minmax(150px,300px);
   grid-template-rows:auto;
   margin-bottom:40px
 }
@@ -131,14 +161,31 @@ a{
 /*------------------------------------------*/
 /*Estilo de la view login y registro*/
 .layout-login-container{
- min-height: 80vh;
-text-align:center;
+  display:grid;
+  grid-template-rows: 80vh;
+  grid-template-columns:500px 500px;
+  gap:30px;
+justify-content:space-evenly;
+  font-size:20px;
+  text-align:center;
 }
 
 .layout-login-container > *{
- border:2px solid blue;
-  margin:10px 150px;
-  padding:20px 0px;
+ border-left:10px solid #04AA6D;
+ border-right:10px solid #04AA6D;
+  padding:20px 20px;
+}
+
+.layout-login-container input{
+  width:250px;
+  height:40px;
+  border-radius:10px;
+  margin-bottom:20px;
+  font-size:25px
+}
+.layout-login-container input::placeholder{
+  font-size:25px;
+  text-align:center;
 }
 
 

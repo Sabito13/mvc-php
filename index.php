@@ -15,10 +15,11 @@ if (!isset($_SESSION["legajo-alumno"])) {
   <div class="layout-container">
     <div class="layout-left-menu"> <?php 
     $materiaAlumnoController->viewAgregarMateriaAlumno(true);
-    $materiaAlumnoController->viewEliminarMateriaAlumno(true)
+    $materiaAlumnoController->viewEliminarMateriaAlumno(true);
+    $materiaAlumnoController->viewFiltrosPromediosMateriaAlumno(true);
     ?></div>
     <div class="layout-main-content"><?php $materiaAlumnoController->viewMostrarMateriaAlumno();?></div>
-    <div class="layout-right-menu"><?php $materiaAlumnoController->viewFiltrosPromediosMateriaAlumno(true); ?> </div>
+    <!--<div class="layout-right-menu"></div>-->
   </div>
   
 <?php }
