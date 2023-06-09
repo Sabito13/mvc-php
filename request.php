@@ -30,6 +30,9 @@ if (isset($_POST["crud-action"])) {
 if (isset($_GET["crud-action"])) {
   $materiaAlumnoController->crudFuncionMateriaAlumnoGet();
 }
+if (isset($_GET["left-menu-action"])) {
+  $materiaAlumnoController->leftMenuFuncionMateria();
+}
 
 header('Location: index.php');
 ?>

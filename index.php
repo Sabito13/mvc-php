@@ -13,11 +13,26 @@ if (!isset($_SESSION["legajo-alumno"])) {
 } else {
   ?>
   <div class="layout-container">
-    <div class="layout-left-menu"> <?php 
-    $materiaAlumnoController->viewAgregarMateriaAlumno(true);
-    $materiaAlumnoController->viewEliminarMateriaAlumno(true);
-    $materiaAlumnoController->viewFiltrosPromediosMateriaAlumno(true);
-    ?></div>
+    <div class="layout-left-menu"> 
+
+      <div><a href="request.php?left-menu-action=mostrar-agregar-materia">AgregarMateria</a></div>
+  <?php 
+        if(isset($_SESSION["left-menu-action"]) and $_SESSION["left-menu-action"]=="mostrar-agregar-materia"){
+          $materiaAlumnoController->viewAgregarMateriaAlumno(true);
+        } 
+  ?>
+      <div><a href="request.php?left-menu-action=mostrar-eliminar-materia">Eliminar Materia</a></div>
+  <?php 
+        if(isset($_SESSION["left-menu-action"]) and $_SESSION["left-menu-action"]=="mostrar-eliminar-materia"){
+          $materiaAlumnoController->viewEliminarMateriaAlumno(true);
+        }
+  ?>
+      <div><a href="request.php?left-menu-action=mostrar-filtro-materia">Filtros Materia</a></div>  
+  <?php 
+        if(isset($_SESSION["left-menu-action"]) and $_SESSION["left-menu-action"]=="mostrar-filtro-materia"){
+          $materiaAlumnoController->viewFiltrosPromediosMateriaAlumno(true);
+        }
+  ?></div>
     <div class="layout-main-content"><?php $materiaAlumnoController->viewMostrarMateriaAlumno();?></div>
     <!--<div class="layout-right-menu"></div>-->
   </div>

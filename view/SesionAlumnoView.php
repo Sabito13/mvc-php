@@ -6,10 +6,10 @@
     <div>
         <h1>Iniciar sesion Alumno</h1>
         <div>
-          <input type="number" name="legajo-alumno"  placeholder="Legajo Alumno">
+          <input type="number" name="legajo-alumno"  placeholder="Legajo Alumno" min="1" required>
         </div>
     </div>
 
-        <input type="submit" value="Iniciar" name="iniciar-sesion" onclick="location='../../index.php'" />
+        <input type="submit" value="Iniciar" name="iniciar-sesion" />
       </form>
     </div>

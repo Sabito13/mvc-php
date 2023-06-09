@@ -6,19 +6,19 @@
     <div style="text-align:center;">
         <h1>Registrar Alumno</h1>
         <div>
-          <input type="number" name="legajo-alumno"  placeholder="Legajo Alumno">
+          <input type="number" name="legajo-alumno"  placeholder="Legajo Alumno" min="1" required>
         </div>
 
         <div>
-          <input type="text" name="nombre-alumno" placeholder="Nombre Alumno">
+          <input type="text" name="nombre-alumno" placeholder="Nombre Alumno" maxlength="30" required >
         </div>
 
 
         <div>
-          <input type="number" name="id-carrera" placeholder="Id Carrera">
+          <input type="number" name="id-carrera" placeholder="Id Carrera" min="1" required>
         </div>
 
-        <input type="submit" value="Registrar" name="registrar-alumno" onclick="location='../../index.php'" />
+        <input type="submit" value="Registrar" name="registrar-alumno" />
       </div>
       </form>
     </div>

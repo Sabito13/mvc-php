@@ -58,11 +58,10 @@ a:hover{
 
 
 /*------------------------------------------*/
-//*------------------------------------------*/
+/*------------------------------------------*/
 /*Estilo de la view Agregar materias alumno*/
 .contanainer-agregar-materia{
-  padding-bottom:32px;
-  border-bottom:2px solid red;
+
 }
 
 .contanainer-agregar-materia h2{
@@ -75,6 +74,8 @@ a:hover{
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+  padding-bottom:20px;
+  border-bottom:2px solid #04AA6D;
 }
 
 .agregar-materia-inputs div {
@@ -118,7 +119,8 @@ a:hover{
   flex-direction: column;
   justify-content: space-around;
   text-align: center;
-  
+  padding-bottom:20px;
+  border-bottom:2px solid #04AA6D;
 }
 
 .eliminar-materia-inputs div {
@@ -142,6 +144,37 @@ a:hover{
 }
 
 /*------------------------------------------*/
+/*Estilo de la view filtro materias alumno*/
+.contanainer-filtro-materia h2{
+  text-align: center;
+  margin:5px 0px;
+  padding-bottom:2px;
+}
+
+.filtro-materia-inputs{
+
+}
+.filtro-materia-inputs > *{
+  font-size:25px;
+  margin:0px;
+  padding:0px;
+}
+
+.filtro-materia-inputs-nota-menor input{
+    width: 80px;
+    height: 30px;
+    font-size:18px;
+  margin-bottom:6px;
+}
+.filtro-materia-inputs-nota-mayor input{
+    width: 80px;
+    height: 30px;
+    font-size:18px;
+}
+
+
+
+/*------------------------------------------*/
 /*Estilo de la view mostrar materias alumno*/
 
 .contanainer-mostrar-materia{
@@ -158,6 +191,8 @@ a:hover{
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+
 /*------------------------------------------*/
 /*Estilo de la view login y registro*/
 .layout-login-container{

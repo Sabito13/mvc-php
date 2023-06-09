@@ -13,7 +13,9 @@ class MateriaAlumnoController
   }
 
 
-  
+  public function leftMenuFuncionMateria(){
+    $_SESSION["left-menu-action"] = $_GET["left-menu-action"];
+  }
 
   //Esta funcion se encarga de todas las operaciones crud
   public function crudFuncionMateriaAlumnoPost(){
@@ -114,7 +116,10 @@ class MateriaAlumnoController
 
       
   }
-
+//Devuelve la view de agregar materias alumno
+public function viewLeftMenu(){
+    include("./view/LeftMenuView.php");
+}
   //Devuelve la view de agregar materias alumno
   public function viewAgregarMateriaAlumno(){
     $materias_resultado = $this->materiaCarreraController->obtenerTodasLasNoMateriasAlumno( $_SESSION["legajo-alumno"]);
