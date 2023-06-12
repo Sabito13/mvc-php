@@ -1,4 +1,4 @@
-<div class="contanainer-mostrar-materia">
+<div class="contanainer-mostrar-materia-promedio">
 
   <?php  
   $contador_materias =0;
@@ -15,8 +15,8 @@
   } 
   ?>
   
-  <div>Nota promedio => <?php echo $nota_total/$contador_materias;?></div>
-  <div>Materias con nota mayor o igual a 7 => <?php echo $contador_materias_mas_siete;?></div>
+  <div class="materia-promedio">Nota promedio => <?php echo $nota_total/$contador_materias;?></div>
+  <div class="materia-mayor">Materias con nota mayor o igual a 7 => <?php echo $contador_materias_mas_siete;?></div>
 
 
 </div>
