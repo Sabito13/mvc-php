@@ -46,6 +46,18 @@ a:hover{
   font-size:22px;
 }
 
+.layout-left-menu a{
+  background-color:#022317;
+  font-size:30px;
+  color:white;
+}
+
+.layout-left-menu a:hover{
+  background-color:#022317;
+  font-size:30px;
+  color:red;
+}
+
 
 /*------------------------------------------*/
 /*Estilo del menu derecho */
