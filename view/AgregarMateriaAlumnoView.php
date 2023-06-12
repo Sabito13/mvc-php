@@ -1,7 +1,6 @@
 <?php require_once './config/config.php';?> 
 
 <div class="contanainer-agregar-materia">
-<h2>Agregar Materia</h2>
   <form class="form" action=<?php echo constant('BASE_URL')."/request.php"?> method="POST">
     <div class="agregar-materia-inputs">
         <div  class="agregar-materia-inputs-select" >
