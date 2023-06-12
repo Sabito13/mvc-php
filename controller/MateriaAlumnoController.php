@@ -95,7 +95,7 @@ class MateriaAlumnoController
   
    //Devuelve la view de funciones de promedio
   public function viewPromediosMateriaAlumno($mostrar){
-    include("./view/PromediosMateriaView.php");
+    include("./view/PromediosMateriasView.php");
   }
 
   //Devuelve la view de mostrar materias alumno
