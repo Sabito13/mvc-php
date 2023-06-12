@@ -1,7 +1,6 @@
 <?php require_once './config/config.php';?> 
 
  <div class="contanainer-filtro-materia">
-  <h2>Filtros</h2> 
     <form class="form" action=<?php echo constant('BASE_URL')."/request.php"?> method="GET">
       <div class="filtro-materia-inputs"> 
         <h3>Materia por Nota</h3>
