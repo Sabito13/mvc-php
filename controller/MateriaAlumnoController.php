@@ -15,6 +15,10 @@ class MateriaAlumnoController
 
   public function leftMenuFuncionMateria(){
     $_SESSION["left-menu-action"] = $_GET["left-menu-action"];
+    if(  $_SESSION["left-menu-action"] == "none"){
+     $_SESSION["promedio"]="";
+    }
+   
   }
 
   //Esta funcion se encarga de todas las operaciones crud
