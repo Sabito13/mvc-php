@@ -212,6 +212,22 @@ a:hover{
   padding-bottom: 15px;
 }
 
+/*------------------------------------------*/
+/*Estilo de la view promedio materias alumno*/
+
+.contanainer-mostrar-materia-promedio{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 100px   100px;
+}
+
+.contanainer-mostrar-materia-promedio > *{
+  text-align: center;
+  font-size:40px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 
 /*------------------------------------------*/
 /*Estilo de la view login y registro*/
