@@ -87,9 +87,15 @@ class MateriaAlumnoController
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
 
-  //Devuelve la view de filtros y funciones de promedio
-  public function viewFiltrosPromediosMateriaAlumno($mostrar){
+  //Devuelve la view de filtros  
+  public function viewFiltrosMateriaAlumno($mostrar){
     include("./view/FiltrosPromediosMateriaAlumnoView.php");
+  }
+  
+  
+   //Devuelve la view de funciones de promedio
+  public function viewPromediosMateriaAlumno($mostrar){
+    include("./view/PromediosMateriaAlumnoView.php");
   }
 
   //Devuelve la view de mostrar materias alumno
