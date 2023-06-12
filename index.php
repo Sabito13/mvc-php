@@ -32,7 +32,7 @@ if (!isset($_SESSION["legajo-alumno"])) {
         if(isset($_SESSION["left-menu-action"]) and $_SESSION["left-menu-action"]=="mostrar-filtro-materia"){
           $materiaAlumnoController->viewFiltrosPromediosMateriaAlumno(true);
         }
-  ?></div>
+  ?>
     <div class="link-menu"><a href="request.php?left-menu-action=mostrar-promedio-materia">Promedios Materia</a></div>  
   <?php 
      if(isset($_SESSION["left-menu-action"]) and $_SESSION["left-menu-action"]=="mostrar-promedio-materia"){
