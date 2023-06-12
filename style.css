@@ -46,21 +46,24 @@ a:hover{
   font-size:22px;
 }
 
-
 .layout-left-menu a{
-  background-color:#022317;
   font-size:32px;
   color:white;
 }
 
 .layout-left-menu a:hover{
-  background-color:#022317;
+  background-color:#066442;
   font-size:32px;
   color:red;
 }
 
 .link-menu{
   padding-bottom:30px;
+}
+
+.link-menu:hover{
+  padding-bottom:30px;
+  background-color:#066442;
 }
 
 
