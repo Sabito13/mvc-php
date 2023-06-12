@@ -5,11 +5,11 @@
       <div class="filtro-materia-inputs"> 
         <h3>Materia por Nota</h3>
         <div class="filtro-materia-inputs-nota-menor">
-          <input type="number" name="nota-menor" min="1" max="10" id="nota-menor" placeholder="Minimo">
+          <input type="number" name="nota-menor" min="1" max="10" id="nota-menor" placeholder="Minimo" required> 
         </div>
 
         <div class="filtro-materia-inputs-nota-mayor">
-          <input type="number" name="nota-mayor" min="1" max="10" id="nota-mayor" placeholder="Maximo">
+          <input type="number" name="nota-mayor" min="1" max="10" id="nota-mayor" placeholder="Maximo" required>
         </div>
 
         <div class="filtro-materia-inputs-submit">
