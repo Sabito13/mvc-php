@@ -13,7 +13,7 @@
         </div>
         
         <div class="agregar-materia-inputs-nota">  
-             <input type="number" name="nota-materia" id="nota-materia" min="1" max="10" placeholder="Nota">
+             <input type="number" name="nota-materia" id="nota-materia" min="1" max="10" placeholder="Nota" required>
         </div>
 
         <div class="agregar-materia-inputs-submit">
