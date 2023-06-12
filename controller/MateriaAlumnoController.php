@@ -17,6 +17,7 @@ class MateriaAlumnoController
     $_SESSION["left-menu-action"] = $_GET["left-menu-action"];
     if(  $_SESSION["left-menu-action"] == "none"){
      $_SESSION["promedio"]="";
+      $_SESSION["filtro-materia"]="";
     }
    
   }
