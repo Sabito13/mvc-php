@@ -42,7 +42,7 @@ a:hover{
 /*------------------------------------------*/
 /*Estilo del menu izquierdo */
 .layout-left-menu{
-  background-color:#022317;
+  background-color:#08895a;
   font-size:22px;
 }
 
@@ -165,31 +165,43 @@ a:hover{
 
 /*------------------------------------------*/
 /*Estilo de la view filtro materias alumno*/
-.contanainer-filtro-materia h2{
-  text-align: center;
-  margin:5px 0px;
-  padding-bottom:2px;
+./*Estilo de la view filtro materias alumno*/
+.contanainer-filtro-materia{
+  padding:0px;
+
 }
 
 .filtro-materia-inputs{
-
+text-align:center;
+padding-bottom:20px;
+border-bottom:2px solid #04AA6D;
 }
 .filtro-materia-inputs > *{
   font-size:25px;
   margin:0px;
   padding:0px;
+  
 }
 
 .filtro-materia-inputs-nota-menor input{
     width: 80px;
     height: 30px;
     font-size:18px;
-  margin-bottom:6px;
+    margin-bottom:10px;
+    margin-top:10px;
 }
 .filtro-materia-inputs-nota-mayor input{
     width: 80px;
     height: 30px;
     font-size:18px;
+}
+
+.filtro-materia-inputs-submit input{
+    width: 80px;
+    height: 30px;
+    font-size:18px;
+     margin-bottom:10px;
+    margin-top:10px;
 }
 
 
